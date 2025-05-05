@@ -15,5 +15,6 @@
         public Rol Rol { get; set; } = Rol.User;
         public DateTime FechaCreacion { get; set; } = DateTime.Now;
         public DateTime FechaModificacion { get; set; } = DateTime.Now;
+        public ICollection<Conversacion> Conversaciones { get; set; }
     }
 }
