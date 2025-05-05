@@ -18,6 +18,14 @@ namespace ComunicacionesPsicologia.Context
         {
             base.OnModelCreating(modelBuilder);
 
+            //llaves primarias
+            modelBuilder.Entity<Users>()
+                .HasKey(u => u.Id);
+            modelBuilder.Entity<Conversacion>()
+                .HasKey(c => c.IdConversacion);
+            modelBuilder.Entity<Recursos>()
+                .HasKey(r => r.IdRecursos);
+
             // Relaciones
             modelBuilder.Entity<Conversacion>()
                 .HasOne(c => c.Usuario)
