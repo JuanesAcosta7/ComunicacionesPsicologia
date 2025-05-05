@@ -1,5 +1,8 @@
 using ComunicacionesPsicologia.Context;
 using Microsoft.EntityFrameworkCore;
+using ComunicacionesPsicologia.Services;
+using ComunicacionesPsicologia.Repository;
+
 
 
 
@@ -16,6 +19,17 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//Constructor para los servicios y repositorios
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IConversationService, ConversationService>();
+builder.Services.AddScoped<IConversacionRepository, ConversacionRepository>();
+
+builder.Services.AddScoped<IRecursosService, RecursosService>();
+builder.Services.AddScoped<IRecursosRepository, RecursosRepository>();
+
 
 //Configuracion de CORS
 builder.Services.AddCors(options =>
