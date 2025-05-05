@@ -1,0 +1,6 @@
+@ComunicacionesPsicologia_HostAddress = http://localhost:5128
+
+GET {{ComunicacionesPsicologia_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
